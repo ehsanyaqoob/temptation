@@ -10,12 +10,20 @@ import Combine
 
 @MainActor
 class SettingsViewModel: ObservableObject {
+    @Published var authProviders: [AuthProviderOptions] = []
+    
+    func loadAuthProviders() {
+        if let providers = try? AuthenticationManager.shared.getProviders(){
+            authProviders = providers
+        }
+    }
     
     func signOut() throws {
         try AuthenticationManager.shared.signOut()
     }
-    func resetPssword() async throws {
-        let authUser =  try AuthenticationManager.shared.getAuthenicatedUser()
+    
+    func resetPassword() async throws {
+        let authUser = try AuthenticationManager.shared.getAuthenicatedUser()
         
         guard let email = authUser.email else {
             throw URLError(.fileDoesNotExist)
@@ -23,6 +31,7 @@ class SettingsViewModel: ObservableObject {
         
         try await AuthenticationManager.shared.resetPassword(email: email)
     }
+    
     
     func updatePassword() async throws {
         let password = "123456"
@@ -35,6 +44,8 @@ class SettingsViewModel: ObservableObject {
     }
     
 }
+
+
 struct SettingsView: View {
     @StateObject private var viewModel = SettingsViewModel()
     @Binding var showSignInView: Bool
@@ -52,11 +63,17 @@ struct SettingsView: View {
                 }
             }
            
-            emailSections
+            if viewModel.authProviders.contains(.email) {
+                emailSections
+            }
+        }
+        .onAppear {
+            viewModel.loadAuthProviders()
         }
         .navigationTitle("Settings")
     }
 }
+
 
 #Preview {
     NavigationStack {
@@ -71,7 +88,7 @@ extension SettingsView {
             Button("Reset Password") {
                 Task {
                     do {
-                        try await viewModel.resetPssword()
+                        try await viewModel.resetPassword()
                         print("password reset!...")
                         //showSignInView = true
                     } catch {
@@ -106,3 +123,4 @@ extension SettingsView {
         }
     }
 }
+

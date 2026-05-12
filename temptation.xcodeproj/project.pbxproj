@@ -7,20 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0730A9462F7AF593002A2CB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0730A9452F7AF593002A2CB8 /* GoogleService-Info.plist */; };
 		0730A9492F7AF8B3002A2CB8 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0730A9482F7AF8B3002A2CB8 /* FirebaseAnalytics */; };
 		0730A94B2F7AF8B3002A2CB8 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 0730A94A2F7AF8B3002A2CB8 /* FirebaseAppCheck */; };
 		0730A94E2F7C40DB002A2CB8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0730A94D2F7C40DB002A2CB8 /* FirebaseAuth */; };
+		077396E12FAB490A003D61A3 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 077396E02FAB490A003D61A3 /* GoogleSignIn */; };
+		077396E32FAB490A003D61A3 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 077396E22FAB490A003D61A3 /* GoogleSignInSwift */; };
+		077396E72FADCC71003D61A3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 077396E62FADCC71003D61A3 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0730A9372F7AF506002A2CB8 /* temptation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = temptation.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0730A9452F7AF593002A2CB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		077396E62FADCC71003D61A3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		077396E52FADCBAA003D61A3 /* Exceptions for "temptation" folder in "temptation" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 0730A9362F7AF506002A2CB8 /* temptation */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		0730A9392F7AF506002A2CB8 /* temptation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				077396E52FADCBAA003D61A3 /* Exceptions for "temptation" folder in "temptation" target */,
+			);
 			path = temptation;
 			sourceTree = "<group>";
 		};
@@ -31,7 +46,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				077396E32FAB490A003D61A3 /* GoogleSignInSwift in Frameworks */,
 				0730A94B2F7AF8B3002A2CB8 /* FirebaseAppCheck in Frameworks */,
+				077396E12FAB490A003D61A3 /* GoogleSignIn in Frameworks */,
 				0730A94E2F7C40DB002A2CB8 /* FirebaseAuth in Frameworks */,
 				0730A9492F7AF8B3002A2CB8 /* FirebaseAnalytics in Frameworks */,
 			);
@@ -43,10 +60,10 @@
 		0730A92E2F7AF506002A2CB8 = {
 			isa = PBXGroup;
 			children = (
-				0730A9452F7AF593002A2CB8 /* GoogleService-Info.plist */,
 				0730A9392F7AF506002A2CB8 /* temptation */,
 				0730A94C2F7C40DB002A2CB8 /* Frameworks */,
 				0730A9382F7AF506002A2CB8 /* Products */,
+				077396E62FADCC71003D61A3 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +105,8 @@
 				0730A9482F7AF8B3002A2CB8 /* FirebaseAnalytics */,
 				0730A94A2F7AF8B3002A2CB8 /* FirebaseAppCheck */,
 				0730A94D2F7C40DB002A2CB8 /* FirebaseAuth */,
+				077396E02FAB490A003D61A3 /* GoogleSignIn */,
+				077396E22FAB490A003D61A3 /* GoogleSignInSwift */,
 			);
 			productName = temptation;
 			productReference = 0730A9372F7AF506002A2CB8 /* temptation.app */;
@@ -119,6 +138,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				0730A9472F7AF8B3002A2CB8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				077396DF2FAB490A003D61A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 0730A9382F7AF506002A2CB8 /* Products */;
@@ -135,7 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0730A9462F7AF593002A2CB8 /* GoogleService-Info.plist in Resources */,
+				077396E72FADCC71003D61A3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +303,7 @@
 				DEVELOPMENT_TEAM = 549VPDSUCP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = temptation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -315,6 +336,7 @@
 				DEVELOPMENT_TEAM = 549VPDSUCP;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = temptation/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -369,6 +391,14 @@
 				minimumVersion = 12.11.0;
 			};
 		};
+		077396DF2FAB490A003D61A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -386,6 +416,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0730A9472F7AF8B3002A2CB8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		077396E02FAB490A003D61A3 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077396DF2FAB490A003D61A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		077396E22FAB490A003D61A3 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 077396DF2FAB490A003D61A3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
